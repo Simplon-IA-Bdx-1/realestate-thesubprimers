@@ -1,9 +1,12 @@
+<!-- PROJECT SHIELDS -->
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://simplon.co/)
-[![Generic badge](https://img.shields.io/badge/POWERED_BY-The_SubPrimers-yellow?style=for-the-badge&logo=appveyor.svg)](https://github.com/Simplon-IA-Bdx-1/realestate-thesubprimers)
+
 
 <!-- PROJECT LOGO -->
-<br />
+<br/>
+<br/>
+<br/>
 <p align="center">
   <a href="">
     <img src="images/bl.png" alt="Logo" width="160" height="160">
@@ -44,14 +47,13 @@
 
 <!-- ABOUT THE PROJECT -->
 ## The SubPrimers Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Generic badge](https://img.shields.io/badge/POWERED_BY-The_SubPrimers-yellow?style=for-the-badge&logo=appveyor.svg)](https://github.com/Simplon-IA-Bdx-1/realestate-thesubprimers)
 
 
 
 ### Pourquoi ce projet ?
 
-Le projet `***Real-Estate***` :house: a été réalisé dans le cadre de la formation de Développeur IA de l'école Microsoft/Simplon Bordeaux. <br/>
+Le projet `Real-Estate` :house: a été réalisé dans le cadre de la formation de Développeur IA de l'école Microsoft/Simplon Bordeaux. <br/>
 Le but est de réaliser un projet ML en end-to-end s'inspirant du challenge [*Kaggle House Prices*](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) afin de pouvoir prédire le prix d'un bien immobilier.<br/>
 Nous avons décidés de se baser sur la vente des maisons et des appartements de la région Ile-de-France.</br>
 Pour cela nous avons réalisées les étapes suivantes :
