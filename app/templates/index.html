@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Accueil :: subprimers</title>
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/logo_simplon.png') }}" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="background" id="background">
+        <div class="container">
+            <div class="center">
+                <img class="prelogo" src="{{ url_for('static', filename='images/logo_simplon.png') }}">
+            </div>
+            <br><br>
+            <div class="center row">
+                <h4>
+                    <span data-text="L">L</span>
+                    <span data-text="O">O</span>
+                    <span data-text="A">A</span>
+                    <span data-text="D">D</span>
+                    <span data-text="I">I</span>
+                    <span data-text="N">N</span>
+                    <span data-text="G">G</span>
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="main-div" id="main-div">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-lg-none" href="#"><img
+                        src="{{ url_for('static', filename='images/logo_simplon.png') }}" class="logo"></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
+
+                    <a class="navbar-brand d-none d-lg-block" href="#"><img
+                            src="{{ url_for('static', filename='images/logo_simplon.png') }}"></a>
+
+                </div>
+            </div>
+        </nav>
+
+        <header>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active"
+                        style="background-image: url('http://s1.picswalls.com/wallpapers/2014/08/08/house-high-quality-wallpaper_015636679_148.jpg')">
+                        <div class="carousel-caption">
+                            <h2 class="animated bounceInLeft sliding-text" style="animation-delay: 1s;">Subprimers</h2>
+                            <p class="animated bounceInRight sliding-text-small" style="animation-delay: 2s;">Crashing prices.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item"
+                        style="background-image: url('https://wallpapercave.com/wp/wp2449408.jpg')">
+                        <div class="carousel-caption">
+                            <h2 class="animated fadeInLeft sliding-text" style="animation-delay: 1s;">Subprimers</h2>
+                            <p class="animated fadeInRight sliding-text-small" style="animation-delay: 2s;">Crashing prices.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item"
+                        style="background-image: url('https://wallpapercave.com/wp/wp2464257.jpg')">
+                        <div class="carousel-caption">
+                            <h2 class="animated flipInX sliding-text" style="animation-delay: 1s;">Subprimers
+                            </h2>
+                            <p class="animated flipInY sliding-text-small" style="animation-delay: 2s;">Crashing prices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a id="scroll" class="ca3-scroll-down-link ca3-scroll-down-arrow" data-ca3_iconfont="ETmodules"
+                data-ca3_icon=""></a>
+        </header>
+        <section class="py-5">
+            <div id="main" class="container">
+                <form class="well form-horizontal" action="{{ url_for('predict')}}" method="post" id="prediction_form">
+                    <fieldset>
+                        <legend>
+                            <center>
+                                <h2><b>Recherche du logement idéal</b></h2>
+                            </center>
+                        </legend><br>
+
+                        <div class="content center form-group">
+                            <label class="col-md-2 control-label">Type de logement<span style="color: red;">*</span>:</label>
+                            <div class="col-md-4 selectContainer">
+                                <div class="content input-group">
+                                    <select name="type_of_logement_raw" class="form-control selectpicker" data-live-search="true"
+                                        required>
+                                        <option data-tokens="" class="content" value="">Sélectionne le type de logement</option>
+                                        <option data-tokens="type_of_logement_raw_Appartement" class="content" value="0">
+                                            Appartement</option>
+                                        <option data-tokens="type_of_logement_raw_Maison" class="content" value="1">
+                                            Maison</option>
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content center form-group">
+                            <label class="col-md-2 control-label">Ville<span style="color: red;">*</span>:</label>
+                            <div class="col-md-4 selectContainer">
+                                <div class="content input-group">
+                                    <select name="ville_raw" class="form-control selectpicker" data-live-search="true"
+                                        required>
+                                        <option data-tokens="" class="content" value="">Selectionne la ville</option>
+                                        <option data-tokens="ville_raw_None" class="content" value="193">Autres</option>
+                                        <option data-tokens="ville_raw_Achères" class="content" value="0">Achères</option>
+                                        <option data-tokens="ville_raw_Alfortville" class="content" value="1">Alfortville</option>
+                                        <option data-tokens="ville_raw_Andrésy" class="content" value="2">Andrésy</option>
+                                        <option data-tokens="ville_raw_Antony" class="content" value="3">Antony</option>
+                                        <option data-tokens="ville_raw_Arcueil" class="content" value="4">Arcueil</option>
+                                        <option data-tokens="ville_raw_Argenteuil" class="content" value="5">Argenteuil</option>
+                                        <option data-tokens="ville_raw_Arpajon" class="content" value="6">Arpajon</option>
+                                        <option data-tokens="ville_raw_Asnières-sur-Seine" class="content" value="7">Asnières-sur-Seine</option>
+                                        <option data-tokens="ville_raw_Athis-Mons" class="content" value="8">Athis-Mons</option>
+                                        <option data-tokens="ville_raw_Aubergenville" class="content" value="9">Aubergenville</option>
+                                        <option data-tokens="ville_raw_Aubervilliers" class="content" value="10">Aubervilliers</option>
+                                        <option data-tokens="ville_raw_Aulnay-sous-Bois" class="content" value="11">Aulnay-sous-Bois</option>
+                                        <option data-tokens="ville_raw_Auvers-sur-Oise" class="content" value="12">Auvers-sur-Oise</option>
+                                        <option data-tokens="ville_raw_Bagnolet" class="content" value="13">Bagnolet</option>
+                                        <option data-tokens="ville_raw_Beauchamp" class="content" value="14">Beauchamp</option>
+                                        <option data-tokens="ville_raw_Bessancourt" class="content" value="15">Bessancourt</option>
+                                        <option data-tokens="ville_raw_Beynes" class="content" value="16">Beynes</option>
+                                        <option data-tokens="ville_raw_Bezons" class="content" value="17">Bezons</option>
+                                        <option data-tokens="ville_raw_Bois le Roi" class="content" value="18">Bois le Roi</option>
+                                        <option data-tokens="ville_raw_Bois-Colombes" class="content" value="19">Bois-Colombes</option>
+                                        <option data-tokens="ville_raw_Bois-d'Arcy" class="content" value="20">Bois-d'Arcy</option>
+                                        <option data-tokens="ville_raw_Boissy-Saint-Léger" class="content" value="21">Boissy-Saint-Léger</option>
+                                        <option data-tokens="ville_raw_Bondoufle" class="content" value="22">Bondoufle</option>
+                                        <option data-tokens="ville_raw_Bondy" class="content" value="23">Bondy</option>
+                                        <option data-tokens="ville_raw_Bonneuil-sur-Marne" class="content" value="24">Bonneuil-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Bougival" class="content" value="25">Bougival</option>
+                                        <option data-tokens="ville_raw_Boulogne-Billancourt" class="content" value="26">Boulogne-Billancourt</option>
+                                        <option data-tokens="ville_raw_Bourg-la-Reine" class="content" value="27">Bourg-la-Reine</option>
+                                        <option data-tokens="ville_raw_Brie-Comte-Robert" class="content" value="28">Brie-Comte-Robert</option>
+                                        <option data-tokens="ville_raw_Brunoy" class="content" value="29">Brunoy</option>
+                                        <option data-tokens="ville_raw_Bry-sur-Marne" class="content" value="30">Bry-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Brétigny-sur-Orge" class="content" value="31">Brétigny-sur-Orge</option>
+                                        <option data-tokens="ville_raw_Bussy-Saint-Georges" class="content" value="32">Bussy-Saint-Georges</option>
+                                        <option data-tokens="ville_raw_Cachan" class="content" value="33">Cachan</option>
+                                        <option data-tokens="ville_raw_Carrières-sous-Poissy" class="content" value="34">Carrières-sous-Poissy</option>
+                                        <option data-tokens="ville_raw_Cergy" class="content" value="35">Cergy</option>
+                                        <option data-tokens="ville_raw_Chambourcy" class="content" value="36">Chambourcy</option>
+                                        <option data-tokens="ville_raw_Champigny-sur-Marne" class="content" value="37">Champigny-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Champs-sur-Marne" class="content" value="38">Champs-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Chanteloup-les-Vignes" class="content" value="39">Chanteloup-les-Vignes</option>
+                                        <option data-tokens="ville_raw_Charenton-le-Pont" class="content" value="40">Charenton-le-Pont</option>
+                                        <option data-tokens="ville_raw_Chatou" class="content" value="41">Chatou</option>
+                                        <option data-tokens="ville_raw_Chaville" class="content" value="42">Chaville</option>
+                                        <option data-tokens="ville_raw_Chelles" class="content" value="43">Chelles</option>
+                                        <option data-tokens="ville_raw_Chennevières-sur-Marne" class="content" value="44">Chennevières-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Chevilly Larue" class="content" value="45">Chevilly Larue</option>
+                                        <option data-tokens="ville_raw_Chevreuse" class="content" value="46">Chevreuse</option>
+                                        <option data-tokens="ville_raw_Chilly-Mazarin" class="content" value="47">Chilly-Mazarin</option>
+                                        <option data-tokens="ville_raw_Choisy-le-Roi" class="content" value="48">Choisy-le-Roi</option>
+                                        <option data-tokens="ville_raw_Châtenay-Malabry" class="content" value="49">Châtenay-Malabry</option>
+                                        <option data-tokens="ville_raw_Châtillon" class="content" value="50">Châtillon</option>
+                                        <option data-tokens="ville_raw_Clamart" class="content" value="51">Clamart</option>
+                                        <option data-tokens="ville_raw_Claye-Souilly" class="content" value="52">Claye-Souilly</option>
+                                        <option data-tokens="ville_raw_Clichy" class="content" value="53">Clichy</option>
+                                        <option data-tokens="ville_raw_Clichy-sous-Bois" class="content" value="54">Clichy-sous-Bois</option>
+                                        <option data-tokens="ville_raw_Colombes" class="content" value="55">Colombes</option>
+                                        <option data-tokens="ville_raw_Combs-la-Ville" class="content" value="56">Combs-la-Ville</option>
+                                        <option data-tokens="ville_raw_Conflans" class="content" value="57">Conflans</option>
+                                        <option data-tokens="ville_raw_Conflans-Sainte-Honorine" class="content" value="58">Conflans-Sainte-Honorine</option>
+                                        <option data-tokens="ville_raw_Corbeil-Essonnes" class="content" value="59">Corbeil-Essonnes</option>
+                                        <option data-tokens="ville_raw_Cormeilles-en-Parisis" class="content" value="60">Cormeilles-en-Parisis</option>
+                                        <option data-tokens="ville_raw_Coulommiers" class="content" value="61">Coulommiers</option>
+                                        <option data-tokens="ville_raw_Courbevoie" class="content" value="62">Courbevoie</option>
+                                        <option data-tokens="ville_raw_Courcouronnes" class="content" value="63">Courcouronnes</option>
+                                        <option data-tokens="ville_raw_Croissy-sur-Seine" class="content" value="64">Croissy-sur-Seine</option>
+                                        <option data-tokens="ville_raw_Crosne" class="content" value="65">Crosne</option>
+                                        <option data-tokens="ville_raw_Créteil" class="content" value="66">Créteil</option>
+                                        <option data-tokens="ville_raw_Dammarie les Lys" class="content" value="67">Dammarie les Lys</option>
+                                        <option data-tokens="ville_raw_Dammartin-en-Goële" class="content" value="68">Dammartin-en-Goële</option>
+                                        <option data-tokens="ville_raw_Deuil-la-Barre" class="content" value="69">Deuil-la-Barre</option>
+                                        <option data-tokens="ville_raw_Domont" class="content" value="70">Domont</option>
+                                        <option data-tokens="ville_raw_Dourdan" class="content" value="71">Dourdan</option>
+                                        <option data-tokens="ville_raw_Drancy" class="content" value="72">Drancy</option>
+                                        <option data-tokens="ville_raw_Draveil" class="content" value="73">Draveil</option>
+                                        <option data-tokens="ville_raw_Dugny" class="content" value="74">Dugny</option>
+                                        <option data-tokens="ville_raw_Eaubonne" class="content" value="75">Eaubonne</option>
+                                        <option data-tokens="ville_raw_Elancourt" class="content" value="76">Elancourt</option>
+                                        <option data-tokens="ville_raw_Enghien-les-Bains" class="content" value="77">Enghien-les-Bains</option>
+                                        <option data-tokens="ville_raw_Epinay sur Orge" class="content" value="78">Epinay sur Orge</option>
+                                        <option data-tokens="ville_raw_Epinay sur Seine" class="content" value="79">Epinay sur Seine</option>
+                                        <option data-tokens="ville_raw_Epinay-sous-Sénart" class="content" value="80">Epinay-sous-Sénart</option>
+                                        <option data-tokens="ville_raw_Epone" class="content" value="81">Epone</option>
+                                        <option data-tokens="ville_raw_Eragny" class="content" value="82">Eragny</option>
+                                        <option data-tokens="ville_raw_Ermont" class="content" value="83">Ermont</option>
+                                        <option data-tokens="ville_raw_Etampes" class="content" value="84">Etampes</option>
+                                        <option data-tokens="ville_raw_Evry" class="content" value="85">Evry</option>
+                                        <option data-tokens="ville_raw_Fontainebleau" class="content" value="86">Fontainebleau</option>
+                                        <option data-tokens="ville_raw_Fontenay-le-Fleury" class="content" value="87">Fontenay-le-Fleury</option>
+                                        <option data-tokens="ville_raw_Fontenay-sous-Bois" class="content" value="88">Fontenay-sous-Bois</option>
+                                        <option data-tokens="ville_raw_Fosses" class="content" value="89">Fosses</option>
+                                        <option data-tokens="ville_raw_Franconville" class="content" value="90">Franconville</option>
+                                        <option data-tokens="ville_raw_Fresne" class="content" value="91">Fresne</option>
+                                        <option data-tokens="ville_raw_Gagny" class="content" value="92">Gagny</option>
+                                        <option data-tokens="ville_raw_Garches" class="content" value="93">Garches</option>
+                                        <option data-tokens="ville_raw_Gargenville" class="content" value="94">Gargenville</option>
+                                        <option data-tokens="ville_raw_Gennevilliers" class="content" value="95">Gennevilliers</option>
+                                        <option data-tokens="ville_raw_Gif-sur-Yvette" class="content" value="96">Gif-sur-Yvette</option>
+                                        <option data-tokens="ville_raw_Gournay sur Marne" class="content" value="97">Gournay sur Marne</option>
+                                        <option data-tokens="ville_raw_Gretz-Armainvilliers" class="content" value="98">Gretz-Armainvilliers</option>
+                                        <option data-tokens="ville_raw_Grigny" class="content" value="99">Grigny</option>
+                                        <option data-tokens="ville_raw_Groslay" class="content" value="100">Groslay</option>
+                                        <option data-tokens="ville_raw_Guyancourt" class="content" value="101">Guyancourt</option>
+                                        <option data-tokens="ville_raw_Herblay" class="content" value="102">Herblay</option>
+                                        <option data-tokens="ville_raw_Herblay sur Seine" class="content" value="103">Herblay sur Seine</option>
+                                        <option data-tokens="ville_raw_Houilles" class="content" value="104">Houilles</option>
+                                        <option data-tokens="ville_raw_Igny" class="content" value="105">Igny</option>
+                                        <option data-tokens="ville_raw_Issy-les-Moulineaux" class="content" value="106">Issy-les-Moulineaux</option>
+                                        <option data-tokens="ville_raw_Ivry-sur-Seine" class="content" value="107">Ivry-sur-Seine</option>
+                                        <option data-tokens="ville_raw_Joinville-le-Pont" class="content" value="108">Joinville-le-Pont</option>
+                                        <option data-tokens="ville_raw_Jouy le Moutier" class="content" value="109">Jouy le Moutier</option>
+                                        <option data-tokens="ville_raw_Jouy-en-Josas" class="content" value="110">Jouy-en-Josas</option>
+                                        <option data-tokens="ville_raw_Juvisy-sur-Orge" class="content" value="111">Auvers-sur-Oise</option>
+                                        <option data-tokens="ville_raw_L'Haÿ-les-Roses" class="content" value="112">L'Haÿ-les-Roses</option>
+                                        <option data-tokens="ville_raw_L'Isle-Adam" class="content" value="113">L'Isle-Adam</option>
+                                        <option data-tokens="ville_raw_La Courneuve" class="content" value="114">La Courneuve</option>
+                                        <option data-tokens="ville_raw_La Ferte sous Jouarre" class="content" value="115">La Ferte sous Jouarre</option>
+                                        <option data-tokens="ville_raw_La Garenne-Colombes" class="content" value="116">La Garenne-Colombes</option>
+                                        <option data-tokens="ville_raw_La-Celle-Saint-Cloud" class="content" value="117">La-Celle-Saint-Cloud</option>
+                                        <option data-tokens="ville_raw_Lagny-sur-Marne" class="content" value="118">Lagny-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Le Blanc-Mesnil" class="content" value="119">Le Blanc-Mesnil</option>
+                                        <option data-tokens="ville_raw_Le Chesnay" class="content" value="120">Le Chesnay</option>
+                                        <option data-tokens="ville_raw_Le Kremlin Bicetre" class="content" value="121">Le Kremlin Bicetre</option>
+                                        <option data-tokens="ville_raw_Le Mesnil-Saint-Denis" class="content" value="122">Le Mesnil-Saint-Denis</option>
+                                        <option data-tokens="ville_raw_Le Mesnil-le-Roi" class="content" value="123">Le Mesnil-le-Roi</option>
+                                        <option data-tokens="ville_raw_Le Pecq" class="content" value="124">Le Pecq</option>
+                                        <option data-tokens="ville_raw_Le Perreux-sur-Marne" class="content" value="125">Le Perreux-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Le Plessis Bouchard" class="content" value="126">Le Plessis Bouchard</option>
+                                        <option data-tokens="ville_raw_Le Plessis-Robinson" class="content" value="127">Le Plessis-Robinson</option>
+                                        <option data-tokens="ville_raw_Le Plessis-Trévise" class="content" value="128">Le Plessis-Trévise</option>
+                                        <option data-tokens="ville_raw_Le Pré-Saint-Gervais" class="content" value="129">Le Pré-Saint-Gervais</option>
+                                        <option data-tokens="ville_raw_Le Raincy" class="content" value="130">Le Raincy</option>
+                                        <option data-tokens="ville_raw_Le Vésinet" class="content" value="131">Le Vésinet</option>
+                                        <option data-tokens="ville_raw_Les Essarts le Roi" class="content" value="132">Les Essarts le Roi</option>
+                                        <option data-tokens="ville_raw_Les Lilas" class="content" value="133">Carrières-sous-Poissy</option>
+                                        <option data-tokens="ville_raw_Les Mureaux" class="content" value="134">Les Mureaux</option>
+                                        <option data-tokens="ville_raw_Les Pavillons-sous-Bois" class="content" value="135">Les Pavillons-sous-Bois</option>
+                                        <option data-tokens="ville_raw_Les Ulis" class="content" value="136">Les Ulis</option>
+                                        <option data-tokens="ville_raw_Levallois" class="content" value="137">Levallois</option>
+                                        <option data-tokens="ville_raw_Levallois-Perret" class="content" value="138">Levallois-Perret</option>
+                                        <option data-tokens="ville_raw_Limay" class="content" value="139">Limay</option>
+                                        <option data-tokens="ville_raw_Limeil-Brévanne" class="content" value="140">Limeil-Brévanne</option>
+                                        <option data-tokens="ville_raw_Lisses" class="content" value="141">Lisses</option>
+                                        <option data-tokens="ville_raw_Livry-Gargan" class="content" value="142">Livry-Gargan</option>
+                                        <option data-tokens="ville_raw_Lognes" class="content" value="143">Lognes</option>
+                                        <option data-tokens="ville_raw_Longjumeau" class="content" value="144">Longjumeau</option>
+                                        <option data-tokens="ville_raw_Louveciennes" class="content" value="145">Louveciennes</option>
+                                        <option data-tokens="ville_raw_Louvres" class="content" value="146">Louvres</option>
+                                        <option data-tokens="ville_raw_Magnanville" class="content" value="147">Magnanville</option>
+                                        <option data-tokens="ville_raw_Magny les Hameaux" class="content" value="148">Magny les Hameaux</option>
+                                        <option data-tokens="ville_raw_Maisons-Alfort" class="content" value="149">Maisons-Alfort</option>
+                                        <option data-tokens="ville_raw_Maisons-Laffitte" class="content" value="150">Maisons-Laffitte/option>
+                                        <option data-tokens="ville_raw_Malakoff" class="content" value="151">Malakoff</option>
+                                        <option data-tokens="ville_raw_Mantes-la-Jolie" class="content" value="152">Mantes-la-Jolie</option>
+                                        <option data-tokens="ville_raw_Mantes-la-Ville" class="content" value="153">Mantes-la-Ville</option>
+                                        <option data-tokens="ville_raw_Marcoussis" class="content" value="154">Marcoussis</option>
+                                        <option data-tokens="ville_raw_Marly la Ville" class="content" value="155">Marly la Ville</option>
+                                        <option data-tokens="ville_raw_Marly-le-Roi" class="content" value="156">Marly-le-Roi</option>
+                                        <option data-tokens="ville_raw_Marolles en Brie" class="content" value="157">Marolles en Brie</option>
+                                        <option data-tokens="ville_raw_Massy" class="content" value="158">Massy</option>
+                                        <option data-tokens="ville_raw_Maule" class="content" value="159">Maule</option>
+                                        <option data-tokens="ville_raw_Maurepas" class="content" value="160">Maurepas</option>
+                                        <option data-tokens="ville_raw_Meaux" class="content" value="161">Meaux</option>
+                                        <option data-tokens="ville_raw_Melun" class="content" value="162">Melun</option>
+                                        <option data-tokens="ville_raw_Mennecy" class="content" value="163">Mennecy</option>
+                                        <option data-tokens="ville_raw_Menucourt" class="content" value="164">Menucourt</option>
+                                        <option data-tokens="ville_raw_Meudon" class="content" value="165">Meudon</option>
+                                        <option data-tokens="ville_raw_Meulan" class="content" value="166">Meulan</option>
+                                        <option data-tokens="ville_raw_Meulan en Yvelines" class="content" value="167">Meulan en Yvelines</option>
+                                        <option data-tokens="ville_raw_Mitry-Mory" class="content" value="168">Mitry-Mory</option>
+                                        <option data-tokens="ville_raw_Moissy-Cramayel" class="content" value="169">Moissy-Cramayel</option>
+                                        <option data-tokens="ville_raw_Montesson" class="content" value="170">Montesson</option>
+                                        <option data-tokens="ville_raw_Montfermeil" class="content" value="171">Montfermeil</option>
+                                        <option data-tokens="ville_raw_Montgeron" class="content" value="172">Montgeron</option>
+                                        <option data-tokens="ville_raw_Montigny-Lès-Cormeilles" class="content" value="173">Montigny-Lès-Cormeilles</option>
+                                        <option data-tokens="ville_raw_Montigny-le-Bretonneux" class="content" value="174">Montigny-le-Bretonneux</option>
+                                        <option data-tokens="ville_raw_Montmagny" class="content" value="175">Montmagny</option>
+                                        <option data-tokens="ville_raw_Montmorency" class="content" value="176">Montmorency</option>
+                                        <option data-tokens="ville_raw_Montreuil" class="content" value="177">Montreuil</option>
+                                        <option data-tokens="ville_raw_Montrouge" class="content" value="178">Montrouge</option>
+                                        <option data-tokens="ville_raw_Morangis" class="content" value="179">Morangis</option>
+                                        <option data-tokens="ville_raw_Morsang sur Orge" class="content" value="180">Morsang sur Orge</option>
+                                        <option data-tokens="ville_raw_Nangis" class="content" value="181">Nangis</option>
+                                        <option data-tokens="ville_raw_Nanterre" class="content" value="182">Nanterre</option>
+                                        <option data-tokens="ville_raw_Nanteuil-Lès-Meaux" class="content" value="183">Nanteuil-Lès-Meaux</option>
+                                        <option data-tokens="ville_raw_Nemours" class="content" value="184">Nemours</option>
+                                        <option data-tokens="ville_raw_Neuilly Plaisance" class="content" value="185">Neuilly Plaisance</option>
+                                        <option data-tokens="ville_raw_Neuilly-sur-Marne" class="content" value="186">Neuilly-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Neuilly-sur-Seine" class="content" value="187">Neuilly-sur-Seine</option>
+                                        <option data-tokens="ville_raw_Nogent-sur-Marne" class="content" value="188">Nogent-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Noisiel" class="content" value="189">Noisiel</option>
+                                        <option data-tokens="ville_raw_Noisy-le-Grand" class="content" value="190">Noisy-le-Grand</option>
+                                        <option data-tokens="ville_raw_Noisy-le-Roi" class="content" value="191">Noisy-le-Roi</option>
+                                        <option data-tokens="ville_raw_Noisy-le-Sec" class="content" value="192">Noisy-le-Sec</option>
+                                        <option data-tokens="ville_raw_Orly" class="content" value="194">Orly</option>
+                                        <option data-tokens="ville_raw_Ormesson-sur-Marne" class="content" value="195">Meudon</option>
+                                        <option data-tokens="ville_raw_Orsay" class="content" value="196">Orsay</option>
+                                        <option data-tokens="ville_raw_Osny" class="content" value="197">Osny</option>
+                                        <option data-tokens="ville_raw_Ozoir-la-Ferrière" class="content" value="198">Ozoir-la-Ferrière</option>
+                                        <option data-tokens="ville_raw_Palaiseau" class="content" value="199">Moissy-Cramayel</option>
+                                        <option data-tokens="ville_raw_Pantin" class="content" value="200">Pantin</option>
+                                        <option data-tokens="ville_raw_Paray-Vieille-Poste" class="content" value="201">Paray-Vieille-Poste</option>
+                                        <option data-tokens="ville_raw_Paris 01" class="content" value="202">Paris 01</option>
+                                        <option data-tokens="ville_raw_Paris 02" class="content" value="203">Paris 02</option>
+                                        <option data-tokens="ville_raw_Paris 03" class="content" value="204">Paris 03</option>
+                                        <option data-tokens="ville_raw_Paris 04" class="content" value="205">Paris 04</option>
+                                        <option data-tokens="ville_raw_Paris 05" class="content" value="206">Paris 05</option>
+                                        <option data-tokens="ville_raw_Paris 06" class="content" value="207">Paris 06</option>
+                                        <option data-tokens="ville_raw_Paris 07" class="content" value="208">Paris 07</option>
+                                        <option data-tokens="ville_raw_Paris 08" class="content" value="209">Paris 08</option>
+                                        <option data-tokens="ville_raw_Paris 09" class="content" value="210">Paris 09</option>
+                                        <option data-tokens="ville_raw_Paris 10" class="content" value="211">Paris 10</option>
+                                        <option data-tokens="ville_raw_Paris 11" class="content" value="212">Paris 11</option>
+                                        <option data-tokens="ville_raw_Paris 12" class="content" value="213">Paris 12</option>
+                                        <option data-tokens="ville_raw_Paris 13" class="content" value="214">Paris 13</option>
+                                        <option data-tokens="ville_raw_Paris 14" class="content" value="215">Paris 14</option>
+                                        <option data-tokens="ville_raw_Paris 15" class="content" value="216">Paris 15</option>
+                                        <option data-tokens="ville_raw_Paris 16" class="content" value="217">Paris 16</option>
+                                        <option data-tokens="ville_raw_Paris 17" class="content" value="218">Paris 17</option>
+                                        <option data-tokens="ville_raw_Paris 18" class="content" value="219">Paris 18</option>
+                                        <option data-tokens="ville_raw_Paris 19" class="content" value="220">Paris 19</option>
+                                        <option data-tokens="ville_raw_Paris 20" class="content" value="221">Paris 20</option>
+                                        <option data-tokens="ville_raw_Parmain" class="content" value="222">Parmain</option>
+                                        <option data-tokens="ville_raw_Persan" class="content" value="223">Persan</option>
+                                        <option data-tokens="ville_raw_Pierrefitte-sur-Seine" class="content" value="224">Pierrefitte-sur-Seine</option>
+                                        <option data-tokens="ville_raw_Plaisir" class="content" value="225">Plaisir</option>
+                                        <option data-tokens="ville_raw_Poissy" class="content" value="226">Poissy</option>
+                                        <option data-tokens="ville_raw_Pontault-Combault" class="content" value="227">Pontault-Combault</option>
+                                        <option data-tokens="ville_raw_Pontoise" class="content" value="228">Pontoise</option>
+                                        <option data-tokens="ville_raw_Puteaux" class="content" value="229">Puteaux</option>
+                                        <option data-tokens="ville_raw_Rambouillet" class="content" value="230">Rambouillet</option>
+                                        <option data-tokens="ville_raw_Ris-Orangis" class="content" value="231">Ris-Orangis</option>
+                                        <option data-tokens="ville_raw_Roissy-en-Brie" class="content" value="232">Roissy-en-Brie</option>
+                                        <option data-tokens="ville_raw_Romainville" class="content" value="233">Romainville</option>
+                                        <option data-tokens="ville_raw_Rosny-sous-Bois" class="content" value="234">Rosny-sous-Bois</option>
+                                        <option data-tokens="ville_raw_Rueil-Malmaison" class="content" value="235">Rueil-Malmaison</option>
+                                        <option data-tokens="ville_raw_Rungis" class="content" value="236">Rungis</option>
+                                        <option data-tokens="ville_raw_Saint Germain les Corbeil" class="content" value="237">Saint Germain les Corbeil</option>
+                                        <option data-tokens="ville_raw_Saint-Cloud" class="content" value="238">Saint-Cloud</option>
+                                        <option data-tokens="ville_raw_Saint-Cyr-l'École" class="content" value="239">Saint-Cyr-l'École</option>
+                                        <option data-tokens="ville_raw_Saint-Denis" class="content" value="240">Saint-Denis</option>
+                                        <option data-tokens="ville_raw_Saint-Fargeau-Ponthierry" class="content" value="241">Saint-Fargeau-Ponthierry</option>
+                                        <option data-tokens="ville_raw_Saint-Germain-en-Laye" class="content" value="242">Saint-Germain-en-Laye</option>
+                                        <option data-tokens="ville_raw_Saint-Gratien" class="content" value="243">Saint-Gratien</option>
+                                        <option data-tokens="ville_raw_Saint-Leu-la-Forêt" class="content" value="244">Saint-Leu-la-Forêt</option>
+                                        <option data-tokens="ville_raw_Saint-Mandé" class="content" value="245">Saint-Mandé</option>
+                                        <option data-tokens="ville_raw_Saint-Maur-des-Fossés" class="content" value="246">Saint-Maur-des-Fossés</option>
+                                        <option data-tokens="ville_raw_Saint-Maurice" class="content" value="247">Saint-Maurice</option>
+                                        <option data-tokens="ville_raw_Saint-Michel-sur-Orge" class="content" value="248">Saint-Michel-sur-Orge</option>
+                                        <option data-tokens="ville_raw_Saint-Nom-la-Bretèche" class="content" value="249">Saint-Nom-la-Bretèche</option>
+                                        <option data-tokens="ville_raw_Saint-Ouen" class="content" value="250">Saint-Ouen</option>
+                                        <option data-tokens="ville_raw_Saint-Ouen-sur-Seine" class="content" value="251">Saint-Ouen-sur-Seine</option>
+                                        <option data-tokens="ville_raw_Saint-Prix" class="content" value="252">Saint-Prix</option>
+                                        <option data-tokens="ville_raw_Saint-Rémy-Lès-Chevreuse" class="content" value="253">Saint-Rémy-Lès-Chevreuse</option>
+                                        <option data-tokens="ville_raw_Saint-Thibault-des-Vignes" class="content" value="254">Saint-Thibault-des-Vignes</option>
+                                        <option data-tokens="ville_raw_Sainte-Geneviève-des-Bois" class="content" value="255">Sainte-Geneviève-des-Bois</option>
+                                        <option data-tokens="ville_raw_Sannois" class="content" value="256">Sannois</option>
+                                        <option data-tokens="ville_raw_Sarcelles" class="content" value="257">Sarcelles</option>
+                                        <option data-tokens="ville_raw_Sartrouville" class="content" value="258">Sartrouville</option>
+                                        <option data-tokens="ville_raw_Savigny-le-Temple" class="content" value="259">Savigny-le-Temple</option>
+                                        <option data-tokens="ville_raw_Savigny-sur-Orge" class="content" value="260">Savigny-sur-Orge</option>
+                                        <option data-tokens="ville_raw_Sceaux" class="content" value="261">Sceaux</option>
+                                        <option data-tokens="ville_raw_Sevran" class="content" value="262">Sevran'</option>
+                                        <option data-tokens="ville_raw_Soisy sur Seine" class="content" value="263">Soisy sur Seine</option>
+                                        <option data-tokens="ville_raw_Soisy-sous-Montmorency" class="content" value="264">Soisy-sous-Montmorency</option>
+                                        <option data-tokens="ville_raw_Stains" class="content" value="265">Stains</option>
+                                        <option data-tokens="ville_raw_Sucy-en-Brie" class="content" value="266">Sucy-en-Brie</option>
+                                        <option data-tokens="ville_raw_Suresnes" class="content" value="267">Suresnes</option>
+                                        <option data-tokens="ville_raw_Sèvres" class="content" value="268">Sèvres</option>
+                                        <option data-tokens="ville_raw_Taverny" class="content" value="269">Taverny</option>
+                                        <option data-tokens="ville_raw_Thiais" class="content" value="270">Thiais</option>
+                                        <option data-tokens="ville_raw_Thorigny-sur-Marne" class="content" value="271">Thorigny-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Torcy" class="content" value="272">Torcy</option>
+                                        <option data-tokens="ville_raw_Tournan-en-Brie" class="content" value="273">Tournan-en-Brie</option>
+                                        <option data-tokens="ville_raw_Trappes" class="content" value="274">Trappes</option>
+                                        <option data-tokens="ville_raw_Tremblay-en-France" class="content" value="275">Tremblay-en-France</option>
+                                        <option data-tokens="ville_raw_Triel sur Seine" class="content" value="276">Triel sur Seine</option>
+                                        <option data-tokens="ville_raw_Vaires sur Marne" class="content" value="277">Vaires sur Marne</option>
+                                        <option data-tokens="ville_raw_Valenton" class="content" value="278">Valenton</option>
+                                        <option data-tokens="ville_raw_Vanves" class="content" value="279">Vanves</option>
+                                        <option data-tokens="ville_raw_Vaucresson" class="content" value="280">Vaucresson/option>
+                                        <option data-tokens="ville_raw_Vaureal" class="content" value="281">Vaureal</option>
+                                        <option data-tokens="ville_raw_Verneuil sur Seine" class="content" value="282">Verneuil sur Seine</option>
+                                        <option data-tokens="ville_raw_Vernouillet" class="content" value="283">Vernouillet</option>
+                                        <option data-tokens="ville_raw_Verrieres le Buisson" class="content" value="284">Verrieres le Buisson</option>
+                                        <option data-tokens="ville_raw_Versailles" class="content" value="285">Versailles</option>
+                                        <option data-tokens="ville_raw_Vigneux-sur-Seine" class="content" value="286">Vigneux-sur-Seine</option>
+                                        <option data-tokens="ville_raw_Ville-d'Avray" class="content" value="287">Ville-d'Avray</option>
+                                        <option data-tokens="ville_raw_Villebon-sur-Yvette" class="content" value="288">Villebon-sur-Yvette</option>
+                                        <option data-tokens="ville_raw_Villecresnes" class="content" value="289">Villecresnes</option>
+                                        <option data-tokens="ville_raw_Villejuif" class="content" value="290">Villejuif</option>
+                                        <option data-tokens="ville_raw_Villemomble" class="content" value="291">Villemomble</option>
+                                        <option data-tokens="ville_raw_Villeneuve-Saint-Georges" class="content" value="292">Villeneuve-Saint-Georges</option>
+                                        <option data-tokens="ville_raw_Villeneuve-la-Garenne" class="content" value="293">Villeneuve-la-Garenne</option>
+                                        <option data-tokens="ville_raw_Villeneuve-le-Roi" class="content" value="294">Villeneuve-le-Roi</option>
+                                        <option data-tokens="ville_raw_Villeparisis" class="content" value="295">Villeparisis</option>
+                                        <option data-tokens="ville_raw_Villepinte" class="content" value="296">Villepinte</option>
+                                        <option data-tokens="ville_raw_Villepreux" class="content" value="297">Villepreux</option>
+                                        <option data-tokens="ville_raw_Villiers-sur-Marne" class="content" value="298">Villiers-sur-Marne</option>
+                                        <option data-tokens="ville_raw_Vincennes" class="content" value="299">Vincennes</option>
+                                        <option data-tokens="ville_raw_Viroflay" class="content" value="300">Viroflay</option>
+                                        <option data-tokens="ville_raw_Viry-Châtillon" class="content" value="301">Viry-Châtillon</option>
+                                        <option data-tokens="ville_raw_Vitry-sur-Seine" class="content" value="302">Vitry-sur-Seine</option>
+                                        <option data-tokens="ville_raw_Vélizy-Villacoublay" class="content" value="303">Vélizy-Villacoublay</option>
+                                        <option data-tokens="ville_raw_Yerres" class="content" value="304">Yerres
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content center form-group">
+                            <label class="col-md-2 control-label">Quartier<span style="color: red;">*</span>:</label>
+                            <div class="col-md-4 selectContainer">
+                                <div class="content input-group">
+                                    <select name="quartier_raw" class="form-control selectpicker" data-live-search="true"
+                                        required>
+                                        <option data-tokens="" class="content" value="">Selectionne le quartier</option>
+                                        <option data-tokens="quartier_raw_None" class="content" value="724">Autres</option>
+                                        <option data-tokens="quartier_raw_Hermittage" class="content" value="409">Hermittage</option>
+                                        <option data-tokens="quartier_raw_Mairie" class="content" value="662">Mairie</option>
+                                        <option data-tokens="quartier_raw_Muette Nord" class="content" value="713">Muette Nord</option>                                      
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="content center form-group">
+                            <label class="col-md-2 control-label">Pièces<span style="color: red;">*</span>:</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="content input-group">
+                                    <input name="room_nb_raw" placeholder="Total Pièces" class="content form-control"
+                                        type="number" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content center form-group">
+                            <label class="col-md-2 control-label">Chambres<span style="color: red;">*</span>:</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="content input-group">
+                                    <input name="bedroom_nb_raw" placeholder="Total Chambre" class="content form-control"
+                                        type="number" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content center form-group">
+                            <label class="col-md-2 control-label">Surface<span style="color: red;">*</span>:</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="content input-group">
+                                    <input name="surface_raw" placeholder="Total m²." class="content form-control"
+                                        type="number" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content center">
+                            <span class="col-md-6" style="color: red;">*Tous requis</span>
+                        </div>
+
+                    </fieldset>
+                    <div class="content center form-group">
+                        <div class="submit col-md-2"><br>
+                            <button type="submit" class="content btn btn-lg btn-warning">Soumission</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <article>
+            <div class="content center">
+                <h3>{{ prediction_text }}</h3>
+            </div>
+        </article>
+        <br>
+        <footer>
+            <div class="container-fluid bg-primary py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="row py-0">
+                                <img class="foot" src="{{ url_for('static', filename='images/logo_simplon.png') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="d-inline-block">
+                                <div class="bg-circle-outline d-inline-block" style="background-color:#4099FF">
+                                    <a href="https://twitter.com/simplonco?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                                        <i class="fa fa-2x fa-fw fa-twitter text-white"></i></a>
+                                </div>
+                                <div class="bg-circle-outline d-inline-block" style="background-color:#0077B5">
+                                    <a href="https://www.linkedin.com/in/perrine-ferr%C3%A9/">
+                                        <i class="fa fa-2x fa-fw fa-linkedin text-white"></i></a>
+                                </div>
+                                <div class="bg-circle-outline d-inline-block" style="background-color:#fe4164">
+                                    <a href="https://www.instagram.com/simplonco/?hl=fr">
+                                        <i class="fa fa-2x fa-fw fa-instagram text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <p class="text-center"> Copyright © subprimers. Touts droits réservés. </p>
+    </div>
+</body>
+<a id="button"></a>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</html>
