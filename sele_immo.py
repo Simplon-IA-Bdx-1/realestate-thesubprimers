@@ -49,4 +49,5 @@ for page in range(1,int(args.range),1):
             print("Annonce enregistrée")
 
     driver.close()
-    time.sleep(5)
+    print(f"Page {int(page)}")
+    time.sleep(2)
