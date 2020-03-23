@@ -1,33 +1,52 @@
 from selenium import webdriver
 import re
+import csv
+import argparse
+import time
 
-ville = []
-quartier = []
-price = []
-room_nb = []
-bedroom_nb = []
-surface = []
+scrapper = {
+        "ville": "offer-details-location--locality",
+        "price": "offer-price",
+        "room_nb": "offer-rooms-number",
+        "bedroom_nb": "offer-details-caracteristik--bedrooms",
+        "surface": "offer-area-number",
+        "quartier": "offer-details-location--sector"
+    }
 
-driver = webdriver.Firefox(executable_path='C:/ProgramData/geckodriver.exe')
+def get_infos(annonce, scrapper):
+    result = {}
+    for k, v in scrapper.items():
+        try:
+            result[k] = annonce.find_element_by_class_name(v).text
+        except:
+            result[k] = ""
+    print("Annonce analysée")
+    return result
 
-resp = driver.get('https://www.logic-immo.com/vente-immobilier-paris-75,100_1/options/groupprptypesids=1,6')
+parser = argparse.ArgumentParser(
+    description='Logic-immo scrapper',
+    usage=
+    '''
+    python app.py [<pages range>]
+    '''
+)
+parser.add_argument('--range', '-r', help='Number of pages to crawl (default 10)', default=10)
+args = parser.parse_args()
 
-liste = driver.find_element_by_class_name('offer-list')
-annonces = liste.find_elements_by_class_name('offer-details')
+for page in range(1,int(args.range),1):
 
-for annonce in annonces[1:-1]:
-    ville.append(annonce.find_element_by_class_name("offer-details-location--locality").text)
-    # if annonce.find_element_by_class_name("offer-details-location--city") > 0:
-    #     quartier.append(annonce.find_element_by_class_name("offer-details-location--city").text)
-    # else:
-    #     quartier.append("")
-    price.append(annonce.find_element_by_class_name("offer-price").text)
-    room_nb.append(annonce.find_element_by_class_name("offer-rooms-number").text)
-    bedroom_nb.append(annonce.find_element_by_class_name("offer-rooms-number").text)
-    surface.append(annonce.find_element_by_class_name("offer-area-number").text)
-    print("OK")
+    driver = webdriver.Firefox(executable_path='C:/ProgramData/geckodriver.exe')
+    resp = driver.get(f'https://www.logic-immo.com/vente-immobilier-paris-75,100_1/options/groupprptypesids=1,6/page={page}')
+    
+    liste = driver.find_element_by_class_name('offer-list')
+    annonces = liste.find_elements_by_class_name('offer-details')
 
-print(room_nb[0])
-print(bedroom_nb[0])
-print(ville[0])
-print(price[0])
+    with open("my_csv.csv", "a", newline='', encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=scrapper.keys())
+        for annonce in annonces:
+            result = get_infos(annonce, scrapper)
+            writer.writerow(result)
+            print("Annonce enregistrée")
+
+    driver.close()
+    time.sleep(5)
