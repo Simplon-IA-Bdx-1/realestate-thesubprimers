@@ -6,8 +6,8 @@ import time
 import random as rd
 
 #specify start and end pages
-start = 1 
-end = 100
+start = 200 
+end = 300
 
 url = "https://www.seloger.com/list.htm?projects=2%2C5&types=1%2C2&natures=1%2C2%2C4&places=%5B%7Bci%3A750056%7D%5D&enterprise=0&qsVersion=1.0&LISTING-LISTpg="
 
@@ -26,7 +26,7 @@ def slp():
 
 slp()
 
-for n in range(start,end):
+for n in range(start,end+1):
 
     driver.get(url + str(n))
 
@@ -44,7 +44,16 @@ for n in range(start,end):
             rooms = driver.find_element_by_xpath('//*[@id="top"]/div[2]/div[2]/div[3]/div[1]/div[2]').text
             bedrooms = driver.find_element_by_xpath('//*[@id="top"]/div[2]/div[2]/div[3]/div[2]/div[2]').text
             surface = driver.find_element_by_xpath('//*[@id="top"]/div[2]/div[2]/div[3]/div[3]/div[2]').text
+            
             district = driver.find_element_by_xpath('//*[@id="top"]/div[2]/div[2]/div[1]/div[2]').text
+            
+            if district ==  'Exclusivité':
+
+                district = driver.find_element_by_xpath('/html/body/div[2]/div/main/div[3]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]').text
+            
+            else:
+
+                district = district
 
             slp()
 
